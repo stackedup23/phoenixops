@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+  color: #a21caf; /* default purple text */
+}
+
+/* Default neon purple text */
+.text-neon {
+  color: #a21caf;
+  text-shadow: 0 0 10px #a21caf, 0 0 20px #a21caf, 0 0 40px #a21caf;
+}
+
+/* Teal headers (titles, nav, spotlight, etc.) */
+.text-teal-header {
+  color: #2dd4bf; /* teal-400 */
+  text-shadow: 0 0 10px #2dd4bf, 0 0 20px #2dd4bf, 0 0 40px #2dd4bf;
+}
+
+/* Nav links */
+.nav-link {
+  color: #2dd4bf;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 0 8px #2dd4bf, 0 0 16px #2dd4bf, 0 0 32px #2dd4bf;
+  transition: transform 0.2s, color 0.2s;
+}
+.nav-link:hover {
+  transform: scale(1.1);
+  color: #5eead4; /* brighter teal */
+}
+
+/* Tagline under PhoenixOps Portal */
+.tagline {
+  color: #2dd4bf;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-shadow: 0 0 10px #2dd4bf, 0 0 20px #2dd4bf, 0 0 40px #2dd4bf;
+}
+
+/* Card style for certs, contact, turning point, etc. */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #2dd4bf;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 15px #2dd4bf;
+}
