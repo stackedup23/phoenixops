@@ -1,0 +1,19 @@
+{
+  "agent": "felixv1",
+  "version": "1.0",
+  "role": "orchestrator",
+  "tasks": [
+    {
+      "name": "monitor_site",
+      "description": "Watch PhoenixOps site for uptime and errors"
+    },
+    {
+      "name": "secure_storage",
+      "description": "Link with Vaultwarden for key storage"
+    }
+  ],
+  "settings": {
+    "log_level": "info",
+    "sync_enabled": true
+  }
+}
