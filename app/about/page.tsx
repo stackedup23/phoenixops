@@ -1,47 +1,61 @@
+"use client";
+import Image from "next/image";
+
 export default function About() {
   return (
-    <section className="max-w-3xl mx-auto text-center space-y-10 px-6 py-12">
-      <h1 className="text-4xl font-extrabold neon-gradient">
+    <main className="min-h-screen flex flex-col items-center bg-black text-center px-6 py-16">
+      
+      {/* Page Header */}
+      <h1 className="text-6xl md:text-7xl font-extrabold text-yellow-400 drop-shadow-[0_0_35px_#facc15] mb-8">
         About PhoenixOps
       </h1>
-
-      <p className="opacity-90 text-lg leading-relaxed">
-        PhoenixOps is the frontline of <span className="text-neon">Stackin Technologies AO LLC</span>.  
-        We combine <span className="text-pink-500">AI automation</span>, 
-        <span className="text-green-400"> creative hustles</span>, and 
-        <span className="text-sky-400"> real-world services</span> to build opportunity, 
-        resilience, and independence. 
+      <p className="text-2xl md:text-3xl text-teal-400 max-w-4xl drop-shadow-[0_0_20px_#14f1d9] mb-12">
+        PhoenixOps is the frontline of <span className="font-bold text-yellow-300">Stackin Technologies AO LLC</span>.  
+        We combine AI automation, overseas development, crypto + day trading, creative hustles, and real-world services  
+        to build opportunity, resilience, and independence.  
+        Minority-owned, community-driven, and powered by grit + innovation.
       </p>
 
-      <div className="card">
-        <h2 className="text-purple-400 text-2xl font-bold">What We Do</h2>
-        <ul className="space-y-2 mt-3 text-left mx-auto max-w-md">
-          <li>• Build bots that scrape jobs, manage leads, and handle communication.</li>
-          <li>• Deliver real-world services: power washing, landscaping, HVAC basics, remodeling.</li>
-          <li>• Provide affordable, community-driven automation solutions.</li>
+      {/* What We Do */}
+      <section className="w-full max-w-5xl bg-black/70 border-4 border-orange-500 rounded-xl shadow-[0_0_30px_#f97316] p-10 mb-12">
+        <h2 className="text-4xl font-bold text-red-400 drop-shadow-[0_0_25px_#ef4444] mb-6">
+          What We Do
+        </h2>
+        <ul className="space-y-4 text-xl md:text-2xl text-gray-200 leading-relaxed">
+          <li>🔥 Build bots that scrape jobs, manage leads, and handle communication.</li>
+          <li>💧 Deliver real-world services: power washing, landscaping, HVAC basics, remodeling.</li>
+          <li>📊 Drive financial growth with crypto trading, DeFi strategies, and forex arbitrage.</li>
+          <li>🌍 Build overseas AI assistants for underdeveloped markets.</li>
+          <li>🛠️ Provide affordable, community-driven automation solutions.</li>
+          <li>🎨 Expand creative streams: Etsy crafts, digital storefronts, community art projects.</li>
         </ul>
-      </div>
+      </section>
 
-      <div className="card">
-        <h2 className="text-green-400 text-2xl font-bold">Our Mission</h2>
-        <p className="opacity-90 mt-2 leading-relaxed">
+      {/* Mission */}
+      <section className="w-full max-w-5xl bg-black/70 border-4 border-yellow-400 rounded-xl shadow-[0_0_35px_#facc15] p-10">
+        <h2 className="text-4xl font-bold text-yellow-400 drop-shadow-[0_0_30px_#facc15] mb-6">
+          Our Mission
+        </h2>
+        <p className="text-xl md:text-2xl text-gray-100 leading-relaxed">
           To prove that second chances + hustle can build lasting freedom.  
-          We’re showing that from Midland, Texas to the world, tech and grit can uplift families 
-          and communities alike.
+          From Midland, Texas to the world, we light the way for the lost and the brave —  
+          showing that tech, hustle, and resilience can uplift families, communities, and future generations.
         </p>
-      </div>
+      </section>
 
-      {/* Logo footer */}
-      <div className="mt-16 flex flex-col items-center space-y-4">
-        <img
-          src="/logo.png"
+      {/* Footer Logo */}
+      <footer className="mt-16 flex flex-col items-center">
+        <Image
+          src="/assets/logos/logo.png"
           alt="Stackin Technologies Logo"
-          className="h-20 opacity-90 hover:opacity-100 transition"
+          width={150}
+          height={150}
+          className="drop-shadow-[0_0_30px_#facc15]"
         />
-        <p className="text-xs opacity-60">
-          © {new Date().getFullYear()} Stackin Technologies AO LLC
+        <p className="mt-4 text-sm text-gray-400">
+          © 2025 Stackin Technologies AO LLC — All Rights Reserved
         </p>
-      </div>
-    </section>
+      </footer>
+    </main>
   );
 }
