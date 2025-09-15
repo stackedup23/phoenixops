@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
   title: "Stackin Technologies | PhoenixOps",
@@ -30,16 +30,8 @@ export default function RootLayout({
           </p>
         </div>
 
-        {/* Navigation */}
-        <header className="w-full flex justify-center py-4">
-          <nav className="space-x-8">
-            <Link className="nav-link text-yellow-300 hover:text-teal-400 transition" href="/">Home</Link>
-            <Link className="nav-link text-yellow-300 hover:text-teal-400 transition" href="/about">About</Link>
-            <Link className="nav-link text-yellow-300 hover:text-teal-400 transition" href="/contact">Contact</Link>
-            <Link className="nav-link text-yellow-300 hover:text-teal-400 transition" href="/turning-point">Turning Point</Link>
-            <Link className="nav-link text-yellow-300 hover:text-teal-400 transition" href="/certifications">Certifications</Link>
-          </nav>
-        </header>
+        {/* Navigation Bar */}
+        <Navbar />
 
         {/* Main Content */}
         <main className="flex flex-col items-center justify-center w-full px-6">
