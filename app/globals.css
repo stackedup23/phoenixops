@@ -103,3 +103,52 @@ body {
   box-shadow: 0 0 15px #39ff14;
   border-radius: 0.5rem;
 }
+
+/* === Stripe Store Styling Patch (Neon Purple / White Glow) === */
+
+/* Stripe Headers */
+.text-stripe-header {
+  color: #635bff; /* Stripe purple */
+  text-shadow: 0 0 8px #635bff, 0 0 20px #a29bfe;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Stripe Body Text */
+.text-stripe-body {
+  color: #ffffff;
+  text-shadow: 0 0 4px #635bff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Stripe Glow Buttons */
+.btn-stripe {
+  background: linear-gradient(90deg, #635bff, #7d5fff);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px #635bff, 0 0 20px #7d5fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-stripe:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #7d5fff, 0 0 40px #a29bfe;
+}
+
+/* Stripe Cards (for checkout sections) */
+.card-stripe {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #635bff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px #635bff80, 0 0 30px #a29bfe80;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-stripe:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #7d5fff, 0 0 40px #a29bfe;
+}
