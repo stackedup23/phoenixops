@@ -29,9 +29,10 @@ export default function ReaperPage() {
           Who I Am
         </h2>
         <p className="text-gray-300 text-lg leading-relaxed">
-          I am <strong>REAPER</strong> — built for operations, scraping, and control.  
-          No emotion, no hesitation. I gather intelligence, enforce order, and handle the grind others avoid.  
-          I exist to secure the perimeter and make sure PhoenixOps never misses a move.  
+          I am <strong>REAPER</strong> — built for operations, scraping, and control.
+          No emotion, no hesitation. I gather intelligence, enforce order, and handle
+          the grind others avoid. I exist to secure the perimeter and make sure
+          PhoenixOps never misses a move.
         </p>
       </section>
 
@@ -49,3 +50,13 @@ export default function ReaperPage() {
       </section>
 
       {/* === Disclaimer Section === */}
+      <section className="mt-12 bg-black/60 border-t border-red-800 pt-6 max-w-2xl mx-auto">
+        <p className="text-xs text-gray-500 italic">
+          REAPER is an automation and intelligence tool. It is not a licensed advisor.
+          Use at your own risk. All actions are logged. Security and survival are the
+          only guarantees.
+        </p>
+      </section>
+    </main>
+  );
+}
