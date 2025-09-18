@@ -1,61 +1,81 @@
 "use client";
 
-export default function Contact() {
+import Image from "next/image";
+import Link from "next/link";
+
+/* ============================================================
+   === Contact Page (Neon Hotline) ===
+   ============================================================ */
+export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-black text-center px-6 py-16 space-y-10">
-      {/* Header */}
-      <h1 className="text-6xl md:text-7xl font-extrabold text-teal-400 drop-shadow-[0_0_35px_#14f1d9]">
-        Contact Us
+    <main className="min-h-screen bg-black px-6 py-16 space-y-16 text-center">
+      
+      {/* ================== Hero Logo ================== */}
+      <div className="flex justify-center mb-8">
+        <Image
+          src="/assets/logos/logo.png"
+          alt="Stackin Technologies Logo"
+          width={220}
+          height={220}
+          className="drop-shadow-[0_0_35px_#facc15]"
+        />
+      </div>
+
+      {/* ================== Title ================== */}
+      <h1 className="text-white text-5xl font-extrabold drop-shadow-[0_0_20px_#f97316] animate-pulse">
+        Contact Stackin Technologies AO LLC
       </h1>
-      <p className="text-xl text-yellow-400 drop-shadow-[0_0_20px_#facc15]">
-        Get in touch with Stackin Technologies AO LLC — automation never sleeps.
+      <p className="text-white text-lg max-w-3xl mx-auto mt-4 drop-shadow-[0_0_10px_#22c55e] italic">
+        We keep our lines open for business, partners, and community.  
+        Reach us anytime via email or phone.  
       </p>
 
-      {/* Contact Info */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12 text-lg">
-        <div className="bg-black/70 border-4 border-teal-500 rounded-xl shadow-[0_0_30px_#14f1d9] p-6 space-y-3">
-          <h2 className="text-2xl font-bold text-teal-400 drop-shadow-[0_0_20px_#14f1d9]">
-            Business
-          </h2>
-          <p className="text-gray-200">admin@stackingtoolsai.com</p>
-          <p className="text-gray-200">Phone: +1 (855) 968-0242</p>
-        </div>
-
-        <div className="bg-black/70 border-4 border-purple-500 rounded-xl shadow-[0_0_30px_#a855f7] p-6 space-y-3">
-          <h2 className="text-2xl font-bold text-purple-400 drop-shadow-[0_0_20px_#a855f7]">
-            Work / Ops
-          </h2>
-          <p className="text-gray-200">felixops23@proton.me</p>
-          <p className="text-gray-200">admin@vercel-email.com</p>
-        </div>
-
-        <div className="bg-black/70 border-4 border-pink-500 rounded-xl shadow-[0_0_30px_#ec4899] p-6 space-y-3">
-          <h2 className="text-2xl font-bold text-pink-400 drop-shadow-[0_0_20px_#ec4899]">
-            Personal
-          </h2>
-          <p className="text-gray-200">stackingtools247@gmail.com</p>
-        </div>
-
-        <div className="bg-black/70 border-4 border-yellow-500 rounded-xl shadow-[0_0_30px_#facc15] p-6 space-y-3">
-          <h2 className="text-2xl font-bold text-yellow-400 drop-shadow-[0_0_20px_#facc15]">
-            Headquarters
-          </h2>
-          <p className="text-gray-200">1719 E Pine St</p>
-          <p className="text-gray-200">Midland, TX 79705</p>
-        </div>
+      {/* ================== Email Directory ================== */}
+      <section className="card border-green-500 shadow-[0_0_30px_#22c55e]">
+        <h2 className="text-white text-2xl font-bold drop-shadow-[0_0_15px_#f97316] mb-4">
+          Official Contact Emails
+        </h2>
+        <ul className="space-y-3 text-lg">
+          <li className="text-white drop-shadow-[0_0_8px_#22c55e]">
+            ✉️ <Link href="mailto:admin@stackingtechnologiesaollc.com" className="link-glow">admin@stackingtechnologiesaollc.com</Link>
+          </li>
+          <li className="text-white drop-shadow-[0_0_8px_#22c55e]">
+            ✉️ <Link href="mailto:support@stackingtechnologiesaollc.com" className="link-glow">support@stackingtechnologiesaollc.com</Link>
+          </li>
+          <li className="text-white drop-shadow-[0_0_8px_#22c55e]">
+            🤖 <Link href="mailto:ai@stackingtoolsai.com" className="link-glow">ai@stackingtoolsai.com</Link>
+          </li>
+          <li className="text-white drop-shadow-[0_0_8px_#22c55e]">
+            ✉️ <Link href="mailto:contact@stackingtoolsai.com" className="link-glow">contact@stackingtoolsai.com</Link>
+          </li>
+          <li className="text-white drop-shadow-[0_0_8px_#22c55e]">
+            ✉️ <Link href="mailto:no-reply@stackingtechnologiesaollc.com" className="link-glow">no-reply@stackingtechnologiesaollc.com</Link>
+          </li>
+        </ul>
       </section>
 
-      {/* Hours / Note */}
-      <p className="mt-12 text-lg text-gray-400 italic">
-        We operate globally, 24/7. Expect replies within 1–2 business days.
-      </p>
-
-      {/* Footer */}
-      <footer className="mt-16 text-sm text-gray-400">
-        <p>
-          © 2025 Stackin Technologies AO LLC • Powered by OpenAI • Built with
-          Next.js • Hustle never sleeps
+      {/* ================== Phone Directory ================== */}
+      <section className="card border-yellow-500 shadow-[0_0_30px_#facc15]">
+        <h2 className="text-white text-2xl font-bold drop-shadow-[0_0_15px_#f97316] mb-4">
+          Phone Directory
+        </h2>
+        <p className="text-white text-lg drop-shadow-[0_0_8px_#f97316]">
+          📞 Cell: 432-661-6101
         </p>
+        <p className="text-white text-lg drop-shadow-[0_0_8px_#f97316]">
+          📞 Twilio (Automated Line): +1 (855) 968-0242
+        </p>
+      </section>
+
+      {/* ================== Footer Logo ================== */}
+      <footer className="mt-20 flex flex-col items-center space-y-6">
+        <Image
+          src="/assets/logos/logo.png"
+          alt="Stackin Technologies Logo Small"
+          width={120}
+          height={120}
+          className="drop-shadow-[0_0_25px_#22c55e]"
+        />
       </footer>
     </main>
   );

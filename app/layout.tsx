@@ -2,11 +2,14 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 
+// === Metadata =========================================================
 export const metadata: Metadata = {
   title: "Stackin Technologies | PhoenixOps",
-  description: "Automation, Hustle, and Light in the Dark",
+  description:
+    "PhoenixOps — automation, resilience, and AI innovation by Stackin Technologies AO LLC. EIN Verified • D-U-N-S Registered • Minority-Owned.",
 };
 
+// === Root Layout ======================================================
 export default function RootLayout({
   children,
 }: {
@@ -14,36 +17,41 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
-      <body className="bg-black min-h-screen text-center">
-        {/* Logo Banner */}
-        <div className="flex flex-col items-center justify-center py-6">
+      <body className="bg-black min-h-screen text-center font-sans text-lg">
+
+        {/* === Logo Banner ============================================ */}
+        <header className="flex flex-col items-center justify-center py-6">
           <img
             src="/assets/logos/logo.png"
             alt="PhoenixOps Logo"
-            className="w-20 h-20 drop-shadow-[0_0_25px_#a21caf] animate-pulse"
+            className="w-40 h-40 drop-shadow-[0_0_40px_#f97316] animate-pulse"
           />
-          <h1 className="mt-4 text-3xl font-extrabold text-purple-400 drop-shadow-[0_0_20px_#a21caf]">
+          <h1 className="mt-4 text-5xl font-extrabold text-white-glow animate-glowLoop">
             PhoenixOps
           </h1>
-          <p className="text-md text-gray-300 italic">
-            Automation • Innovation • Hustle
+          <p className="tagline mt-2">
+            Automation • Innovation • Excellence
           </p>
-        </div>
+        </header>
 
-        {/* Navigation */}
+        {/* === Navigation Bar ========================================== */}
         <Navbar />
 
-        {/* Main Content */}
+        {/* === Main Content Wrapper ==================================== */}
         <main className="flex flex-col items-center justify-center w-full px-6">
-          {children}
+          <div className="box-glow w-full max-w-5xl">{children}</div>
         </main>
 
-        {/* Footer */}
-        <footer className="mt-12 py-6 text-gray-400 text-sm">
-          © {new Date().getFullYear()} Stackin Technologies AO LLC • EIN Verified •
-          D-U-N-S Registered • Minority/Female Co-Owner Advantage
+        {/* === Footer ================================================== */}
+        <footer className="mt-12 py-8 px-6 bg-black/70 border-t border-orange-500 rounded-t-xl shadow-[0_0_25px_#f97316]">
+          <p className="text-base text-white-glow">
+            © {new Date().getFullYear()} Stackin Technologies AO LLC • EIN Verified • D-U-N-S Registered
+          </p>
+          <p className="mt-3 italic text-white-glow drop-shadow-[0_0_15px_#f97316]">
+            ⚡ “PhoenixOps isn’t just a site — it’s a living system. GPT at the core, human grit at the helm.”
+          </p>
         </footer>
+
       </body>
     </html>
   );

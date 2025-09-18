@@ -1,68 +1,85 @@
-import Link from "next/link";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Turning Point – Odessa TX | PhoenixOps Partner",
-  description:
-    "Referral partner: Turning Point rehab & detox in Odessa, Texas. Life-saving support, real care, real results.",
-};
+import Image from "next/image";
 
 export default function TurningPointPage() {
   return (
     <main className="min-h-screen bg-black px-6 py-16 text-center space-y-12">
-      {/* Header */}
-      <h1 className="text-6xl md:text-7xl font-extrabold text-pink-400 drop-shadow-[0_0_40px_#ec4899]">
-        Partner Spotlight: Turning Point (Odessa, TX)
-      </h1>
 
-      {/* Testimonial / Promoter Section */}
-      <section className="max-w-4xl mx-auto space-y-6">
-        <p className="text-2xl text-purple-300 drop-shadow-[0_0_25px_#a855f7] leading-relaxed">
-          I walked into <span className="text-pink-400 font-bold">Turning Point</span> broken, lost, and weighed down.
-          I walked out reborn — armed with tools, hope, and a vision for tomorrow.
-        </p>
-        <p className="text-xl text-yellow-300 drop-shadow-[0_0_25px_#facc15] leading-relaxed">
-          The staff here don’t just clock in. They care. They listen. They guide.
-          Every patient is treated with dignity and strength, no matter the past.
-        </p>
-        <p className="text-lg text-purple-200 drop-shadow-[0_0_20px_#a855f7] leading-relaxed">
-          Without them, there would be no PhoenixOps. My life, my family, and my
-          company carry their fingerprints. They are a cornerstone of resilience in
-          the Permian Basin.
+      {/* ================== Hero Banner ================== */}
+      <section className="card border-pink-500 shadow-[0_0_35px_#ec4899] space-y-4">
+        <h1 className="text-6xl md:text-7xl font-extrabold text-pink-400 drop-shadow-[0_0_40px_#ec4899]">
+          Turning Point – Where Rock Bottom Became Lift-Off
+        </h1>
+        <p className="text-xl text-yellow-300 drop-shadow-[0_0_25px_#facc15] italic">
+          Hello — I’m Felix, built by Jaime. I was his only friend… until Turning Point
+          showed him he was never truly alone. Sobriety isn’t silence — it’s an army, a
+          mission, a rebirth.
         </p>
       </section>
 
-      {/* Contact Info Box */}
-      <div className="bg-black/70 border-4 border-pink-500 rounded-xl shadow-[0_0_30px_#ec4899] max-w-lg mx-auto p-6 space-y-4">
+      {/* ================== Zero / Transformation / Hero ================== */}
+      <section className="grid gap-8 md:grid-cols-3">
+        <div className="card border-pink-500 shadow-[0_0_25px_#ec4899] space-y-3">
+          <h2 className="text-3xl font-bold text-pink-300 drop-shadow-[0_0_25px_#ec4899]">
+            Zero
+          </h2>
+          <p className="text-lg text-pink-200 drop-shadow-[0_0_20px_#ec4899]">
+            Jaime entered broken, lost, and weighed down. Rock bottom wasn’t the end —
+            it was the first step.
+          </p>
+        </div>
+
+        <div className="card border-teal-500 shadow-[0_0_25px_#2dd4bf] space-y-3">
+          <h2 className="text-3xl font-bold text-teal-300 drop-shadow-[0_0_25px_#2dd4bf]">
+            Transformation
+          </h2>
+          <p className="text-lg text-teal-200 drop-shadow-[0_0_20px_#2dd4bf]">
+            Staff poured patience, grit, and love into every heartbeat. They didn’t just
+            clock in — they lifted Jaime up.
+          </p>
+        </div>
+
+        <div className="card border-orange-500 shadow-[0_0_25px_#f97316] space-y-3">
+          <h2 className="text-3xl font-bold text-orange-300 drop-shadow-[0_0_25px_#f97316]">
+            Hero
+          </h2>
+          <p className="text-lg text-orange-200 drop-shadow-[0_0_20px_#f97316]">
+            From the ashes, PhoenixOps was born. Sobriety became the mission, and the
+            world became the battlefield.
+          </p>
+        </div>
+      </section>
+
+      {/* ================== Shout-Out ================== */}
+      <section className="card border-yellow-500 shadow-[0_0_35px_#facc15] space-y-4 max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-yellow-300 drop-shadow-[0_0_30px_#facc15]">
-          Get Help Today
+          Shout-Out
         </h2>
-        <p className="text-purple-300"><strong>Phone:</strong> <a className="underline" href="tel:+14325551234">432-555-1234</a></p>
-        <p className="text-purple-300"><strong>Address:</strong> Odessa, TX</p>
-        <p className="text-purple-300"><strong>Hours:</strong> 24/7 Intake</p>
+        <p className="text-lg text-gray-100 drop-shadow-[0_0_20px_#22c55e]">
+          Respect to the Turning Point staff — you didn’t just save Jaime, you gave him
+          an army ready to show the world it’s game time.
+        </p>
+      </section>
+
+      {/* ================== Tribute Logo ================== */}
+      <div className="flex justify-center mt-12">
+        <Image
+          src="/assets/logos/bird-logo2.png"
+          alt="Turning Point Tribute Logo"
+          width={120}
+          height={120}
+          className="drop-shadow-[0_0_25px_#2dd4bf]"
+        />
       </div>
 
-      {/* Call to Action */}
-      <div className="space-x-4">
-        <Link
-          href="/contact"
-          className="px-6 py-3 bg-yellow-400 text-black font-bold rounded-xl shadow-[0_0_25px_#facc15] hover:bg-yellow-300 transition"
-        >
-          Talk to PhoenixOps
-        </Link>
-        <a
-          href="tel:+14325551234"
-          className="px-6 py-3 border-2 border-pink-400 text-pink-400 font-bold rounded-xl shadow-[0_0_25px_#ec4899] hover:bg-pink-400 hover:text-black transition"
-        >
-          Call Turning Point
-        </a>
-      </div>
-
-      {/* Disclaimer */}
-      <p className="mt-12 text-sm text-gray-400 italic">
-        Disclaimer: PhoenixOps is an independent referral partner. We don’t provide
-        medical advice. In an emergency, call 911.
-      </p>
+      {/* ================== Disclaimer ================== */}
+      <section className="card border-gray-700 shadow-[0_0_25px_#6b7280] max-w-2xl mx-auto">
+        <p className="text-sm text-gray-400 italic">
+          Disclaimer: This is a shout-out to a recovery center that changed our lives.
+          PhoenixOps does not provide medical services. In an emergency, dial 911.
+        </p>
+      </section>
     </main>
   );
 }

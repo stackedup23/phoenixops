@@ -1,60 +1,49 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react";
 
+/* ============================================================
+   === PhoenixOps Navbar (Final Sync) ===
+   ============================================================ */
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="bg-black border-b border-gray-800 shadow-[0_0_25px_#14f1d9]">
+    <nav className="bg-black border-b border-orange-500 shadow-[0_0_25px_#f97316]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo + Site Name */}
-          <div className="flex-shrink-0 flex items-center space-x-3">
+
+          {/* === Brand / Home === */}
+          <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <Image
-                src="/logo.png" // make sure logo.png is inside /public
-                alt="Stackin Technologies Logo"
-                width={40}
-                height={40}
-                className="drop-shadow-lg"
-              />
-            </Link>
-            <Link href="/">
-              <span className="text-2xl font-extrabold text-purple-400 drop-shadow-lg">
-                Stackin Technologies AO LLC
+              <span className="text-3xl font-extrabold text-amber-400 drop-shadow-[0_0_20px_#fbbf24] animate-pulse">
+                PhoenixOps
               </span>
             </Link>
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex space-x-6">
-            <Link href="/" className="hover:text-yellow-400 text-teal-400 transition">
-              Home
-            </Link>
-            <Link href="/about" className="hover:text-yellow-400 text-teal-400 transition">
-              About
-            </Link>
-            <Link href="/contact" className="hover:text-yellow-400 text-teal-400 transition">
-              Contact
-            </Link>
-            <Link href="/turning-point" className="hover:text-yellow-400 text-teal-400 transition">
-              Turning Point
-            </Link>
-            <Link href="/certifications" className="hover:text-yellow-400 text-teal-400 transition">
-              Certifications
-            </Link>
-            <Link href="/revenue" className="hover:text-yellow-400 text-teal-400 transition">
-              Revenue
-            </Link>
-            <Link href="/policies" className="hover:text-yellow-400 text-teal-400 transition">
-              Policies
-            </Link>
-            <Link href="/readme" className="hover:text-yellow-400 text-teal-400 transition">
-              ReadMe
-            </Link>
-            <Link href="/store" className="hover:text-yellow-400 text-teal-400 transition">
-              Store
-            </Link>
+          {/* === Mobile Toggle === */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="focus:outline-none text-lime-400 drop-shadow-[0_0_12px_#22c55e]"
+            >
+              ☰
+            </button>
+          </div>
+
+          {/* === Desktop Links === */}
+          <div className="hidden md:flex space-x-6">
+            <Link href="/about" className="text-lime-400 drop-shadow-[0_0_12px_#22c55e] hover:scale-105 transition">About</Link>
+            <Link href="/contact" className="text-cyan-400 drop-shadow-[0_0_12px_#06b6d4] hover:scale-105 transition">Contact</Link>
+            <Link href="/turning-point" className="text-pink-400 drop-shadow-[0_0_12px_#ec4899] hover:scale-105 transition">Turning Point</Link>
+            <Link href="/certifications" className="text-blue-400 drop-shadow-[0_0_12px_#3b82f6] hover:scale-105 transition">Certifications</Link>
+            <Link href="/revenue" className="text-orange-400 drop-shadow-[0_0_12px_#fb923c] hover:scale-105 transition">Revenue</Link>
+            <Link href="/policies" className="text-red-400 drop-shadow-[0_0_12px_#ef4444] hover:scale-105 transition">Policies</Link>
+            <Link href="/readme" className="text-white drop-shadow-[0_0_12px_#ffffff] hover:scale-105 transition">ReadMe</Link>
+            <Link href="/store" className="text-green-400 drop-shadow-[0_0_12px_#22c55e] hover:scale-105 transition">Store</Link>
+            <Link href="/bots" className="text-purple-400 drop-shadow-[0_0_12px_#a855f7] hover:scale-105 transition">Bots</Link>
           </div>
         </div>
       </div>

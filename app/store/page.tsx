@@ -30,19 +30,19 @@ export default function StorePage() {
   const Card = ({
     title,
     blurb,
+    tagline,
     img,
     priceId,
     keyId,
-    disabled,
   }: {
     title: string;
     blurb: string;
+    tagline?: string;
     img: string;
-    priceId?: string;
+    priceId: string;
     keyId: Key;
-    disabled?: boolean;
   }) => (
-    <div className="card max-w-md mx-auto p-6 rounded-xl border border-purple-700 bg-gradient-to-b from-purple-900 via-purple-950 to-black shadow-[0_0_25px_rgba(168,85,247,0.3)]">
+    <div className="card-stripe max-w-md mx-auto p-6 rounded-xl">
       <Image
         src={img}
         alt={title}
@@ -53,23 +53,20 @@ export default function StorePage() {
       <h3 className="text-2xl font-bold text-white drop-shadow-[0_0_15px_rgba(168,85,247,0.6)] mb-2">
         {title}
       </h3>
-      <p className="text-sm text-gray-300 mb-6">{blurb}</p>
+      <p className="text-sm text-gray-300 mb-4">{blurb}</p>
 
-      {!disabled && priceId ? (
-        <button
-          onClick={() => buy(priceId, keyId)}
-          disabled={loadingKey === keyId}
-          className="px-5 py-3 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-800 shadow-[0_10px_25px_rgba(168,85,247,0.25)] transition-all duration-300 ease-out disabled:opacity-60 disabled:cursor-not-allowed"
-        >
-          {loadingKey === keyId ? "Processing..." : "Buy Now – $10"}
-        </button>
-      ) : (
-        <button
-          disabled
-          className="px-5 py-3 rounded-lg text-sm font-semibold text-gray-500 bg-gray-800 border border-gray-700 cursor-not-allowed"
-        >
-          Coming Soon
-        </button>
+      <button
+        onClick={() => buy(priceId, keyId)}
+        disabled={loadingKey === keyId}
+        className="btn-stripe w-full disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {loadingKey === keyId ? "Processing..." : "Subscribe — $10/mo"}
+      </button>
+
+      {tagline && (
+        <p className="mt-3 italic text-purple-300 text-xs drop-shadow-[0_0_12px_rgba(168,85,247,0.7)]">
+          {tagline}
+        </p>
       )}
 
       <p className="text-xs text-gray-400 mt-3">
@@ -90,63 +87,71 @@ export default function StorePage() {
         {/* === ACTIVE PRODUCTS === */}
         <Card
           title="MIA – AI Mental Health & Wellness"
-          blurb="Non-clinical AI support. Guidance, journaling, coping prompts."
+          blurb="Non-clinical AI support: journaling, coping prompts, guided self-reflection."
+          tagline="Your steady companion in the storm."
           img="/assets/bots/mia.png"
-          priceId={process.env.MIA_PRICE_ID}
+          priceId={process.env.MIA_PRICE_ID as string}
           keyId="mia"
         />
         <Card
           title="LYRA – Finance & Analytics Bot"
-          blurb="Dashboards, budgets, and insights for your hustles."
+          blurb="Dashboards, budgets, and forecasts — insights for your growth."
+          tagline="Turning numbers into navigation."
           img="/assets/bots/lira.png"
-          priceId={process.env.LYRA_PRICE_ID}
+          priceId={process.env.LYRA_PRICE_ID as string}
           keyId="lyra"
         />
         <Card
           title="REAPER – Ops & Field Bot"
-          blurb="Scraping, tactical deployment, automations, field tools."
+          blurb="Scraping, tactical deployment, and field-ready automations."
+          tagline="Silent, sharp, and precise."
           img="/assets/bots/reaper.png"
-          priceId={process.env.REAPER_PRICE_ID}
+          priceId={process.env.REAPER_PRICE_ID as string}
           keyId="reaper"
         />
         <Card
           title="FELIX – Security Chief / Architect"
-          blurb="Sec reviews, hardening checklists, ops playbooks."
+          blurb="Security reviews, hardening checklists, ops playbooks."
+          tagline="Overwatch in real-time."
           img="/assets/bots/felix.png"
-          priceId={process.env.FELIX_PRICE_ID}
+          priceId={process.env.FELIX_PRICE_ID as string}
           keyId="felix"
         />
-
-        {/* === COMING SOON PRODUCTS === */}
         <Card
           title="LOCKDOWN – Sentinel Bot"
           blurb="Digital shield. Compliance, monitoring, and protection."
+          tagline="The gatekeeper stands ready."
           img="/assets/bots/lockdown.png"
+          priceId={process.env.LOCKDOWN_PRICE_ID as string}
           keyId="lockdown"
-          disabled
         />
         <Card
-          title="BINGO – Hustle Bot"
-          blurb="Entertainment and prosperity energy. The golden hustler."
+          title="BINGO – Opportunity Bot"
+          blurb="Entertainment and prosperity energy. The golden spark."
+          tagline="Where fortune meets flow."
           img="/assets/bots/bingo.png"
+          priceId={process.env.BINGO_PRICE_ID as string}
           keyId="bingo"
-          disabled
         />
         <Card
           title="TORCH – PhoenixOps Micro-Support"
           blurb="Fuel the flame. Monthly support keeps the squad alive."
+          tagline="Keep the fire alive."
           img="/assets/bots/torch.png"
+          priceId={process.env.TORCH_PRICE_ID as string}
           keyId="torch"
-          disabled
         />
       </div>
 
       {/* === FOOTER LEGAL === */}
       <p className="text-xs text-gray-400 mt-10 max-w-3xl text-center">
-        By purchasing, you agree that these are non-clinical, informational AI
-        tools. No refunds on digital services once delivered, except where
-        required by law.
+        By subscribing, you agree that PhoenixOps bots are non-clinical,
+        informational AI tools. No refunds once delivered, except where
+        required by law. All bots are support systems — not medical, legal,
+        or financial advisors. Use responsibly.
       </p>
     </div>
   );
 }
+
+

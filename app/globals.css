@@ -5,98 +5,157 @@
 /* === Global Defaults === */
 body {
   background-color: black;
-  color: #a21caf; /* default neon purple text */
+  color: #a21caf;
   font-family: 'Inter', sans-serif;
+  font-size: 1.125rem; /* base up to lg */
+  line-height: 1.6;
 }
 
 /* === Neon Purple Text === */
 .text-neon {
   color: #a21caf;
-  text-shadow: 
+  text-shadow:
     0 0 10px #a21caf,
     0 0 20px #a21caf,
     0 0 40px #a21caf,
     0 0 80px #a21caf;
 }
 
-/* === Teal Headers (titles, nav, spotlight, etc.) === */
+/* === Teal Headers === */
 .text-teal-header {
-  color: #2dd4bf; /* teal-400 */
-  text-shadow: 
+  color: #2dd4bf;
+  text-shadow:
     0 0 10px #2dd4bf,
     0 0 20px #2dd4bf,
     0 0 40px #2dd4bf,
     0 0 80px #2dd4bf;
 }
 
-/* === Navigation Links === */
+/* === White/Orange Glow Headers === */
+.text-white-glow {
+  color: #ffffff;
+  text-shadow:
+    0 0 8px #f97316,
+    0 0 16px #f97316,
+    0 0 32px #f97316;
+  font-weight: 700;
+}
+
+/* === Navigation Links (Lime / Yellow Glow) === */
 .nav-link {
-  color: #2dd4bf;
-  font-size: 1.2rem;
+  color: #22c55e;
+  font-size: 1.25rem; /* bumped */
   font-weight: 600;
-  text-shadow: 
-    0 0 8px #2dd4bf,
-    0 0 16px #2dd4bf,
-    0 0 32px #2dd4bf;
+  text-shadow:
+    0 0 8px #22c55e,
+    0 0 16px #22c55e,
+    0 0 32px #22c55e;
   transition: transform 0.2s, color 0.2s;
 }
-
 .nav-link:hover {
   transform: scale(1.1);
-  color: #5eead4; /* brighter teal */
+  color: #facc15;
+  text-shadow:
+    0 0 12px #facc15,
+    0 0 24px #facc15,
+    0 0 48px #facc15;
 }
 
-/* === Tagline Under Logo / Portal Header === */
+/* === Global Navbar Defaults === */
+nav a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-shadow:
+    0 0 8px #22c55e,
+    0 0 16px #22c55e,
+    0 0 32px #22c55e;
+}
+nav a:hover {
+  transform: scale(1.1);
+  color: #facc15;
+  text-shadow:
+    0 0 12px #facc15,
+    0 0 24px #facc15,
+    0 0 48px #facc15;
+}
+
+/* === Global Link Glow === */
+.link-glow {
+  color: #a855f7;
+  font-weight: 600;
+  text-shadow: 0 0 8px #a855f7, 0 0 16px #9333ea;
+  transition: color 0.2s, transform 0.2s;
+}
+.link-glow:hover {
+  color: #facc15;
+  transform: scale(1.05);
+  text-shadow: 0 0 12px #facc15, 0 0 25px #a855f7;
+}
+
+/* === Tagline === */
 .tagline {
   color: #2dd4bf;
-  font-size: 1.3rem;
+  font-size: 1.5rem; /* bumped up */
   font-weight: 500;
-  text-shadow: 
+  text-shadow:
     0 0 10px #2dd4bf,
     0 0 20px #2dd4bf,
     0 0 40px #2dd4bf;
 }
 
-/* === Card Styles (certs, contact, turning point, etc.) === */
-.card {
+/* === Card / Section Box === */
+.card,
+.box-glow {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #2dd4bf;
+  border: 1px solid #f97316;
   border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: 
-    0 0 15px #2dd4bf,
-    0 0 30px #2dd4bf;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  box-shadow:
+    0 0 12px #f97316,
+    0 0 24px #f97316;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.card:hover {
+.card:hover,
+.box-glow:hover {
   transform: translateY(-5px);
-  box-shadow: 
-    0 0 20px #5eead4,
-    0 0 40px #5eead4;
+  box-shadow:
+    0 0 18px #fb923c,
+    0 0 36px #fb923c;
 }
 
-/* === Button Glow === */
+/* === Button Base === */
+.btn-base {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.25s ease-in-out;
+  transform: translateY(0);
+}
+.btn-base:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* === Legacy Glow Button === */
 .btn-glow {
   background: linear-gradient(90deg, #a21caf, #2dd4bf);
   color: black;
   font-weight: bold;
   padding: 0.5rem 1.2rem;
   border-radius: 0.375rem;
-  text-shadow: 0 0 5px #000;
-  box-shadow: 0 0 15px #a21caf, 0 0 30px #2dd4bf;
   transition: all 0.3s ease-in-out;
 }
-
 .btn-glow:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #5eead4, 0 0 50px #a21caf;
 }
 
-/* === Terminal Style Glow (for business charts, revenue displays, etc.) === */
+/* === Terminal Box === */
 .terminal-box {
   background-color: #111;
-  color: #39ff14; /* neon green text */
+  color: #39ff14;
   font-family: 'Courier New', monospace;
   padding: 1rem;
   border: 1px solid #39ff14;
@@ -104,25 +163,43 @@ body {
   border-radius: 0.5rem;
 }
 
-/* === Stripe Store Styling Patch (Neon Purple / White Glow) === */
-
-/* Stripe Headers */
-.text-stripe-header {
-  color: #635bff; /* Stripe purple */
-  text-shadow: 0 0 8px #635bff, 0 0 20px #a29bfe;
-  font-weight: 700;
-  font-size: 2rem;
+/* === Tron ASCII Shimmer === */
+.ascii-art {
+  font-family: 'Courier New', monospace;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #22c55e;
+  text-shadow: 0 0 8px #22c55e, 0 0 16px #166534;
+  background: linear-gradient(
+    90deg,
+    #22c55e 0%,
+    #22c55e 40%,
+    #9333ea 50%,
+    #22c55e 60%,
+    #22c55e 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-/* Stripe Body Text */
+/* === Stripe Store Styling === */
+.text-stripe-header {
+  color: #635bff;
+  text-shadow: 0 0 8px #635bff, 0 0 20px #a29bfe;
+  font-weight: 700;
+  font-size: 2.25rem;
+}
 .text-stripe-body {
   color: #ffffff;
   text-shadow: 0 0 4px #635bff;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   line-height: 1.6;
 }
-
-/* Stripe Glow Buttons */
 .btn-stripe {
   background: linear-gradient(90deg, #635bff, #7d5fff);
   color: #fff;
@@ -132,23 +209,23 @@ body {
   box-shadow: 0 0 10px #635bff, 0 0 20px #7d5fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .btn-stripe:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #7d5fff, 0 0 40px #a29bfe;
 }
-
-/* Stripe Cards (for checkout sections) */
 .card-stripe {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #635bff;
   border-radius: 0.5rem;
   padding: 1.5rem;
-  box-shadow: 0 0 15px #635bff80, 0 0 30px #a29bfe80;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow:
+    0 0 20px #635bff80,
+    0 0 40px #a29bfe80;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .card-stripe:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px #7d5fff, 0 0 40px #a29bfe;
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 25px #7d5fff,
+    0 0 50px #a29bfe;
 }

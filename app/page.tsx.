@@ -1,0 +1,32 @@
+"use client";
+
+import Image from "next/image";
+
+/* ============================================================
+   === Homepage (Bird Emblem + Glow Flow) ===
+   ============================================================ */
+export default function HomePage() {
+  return (
+    <main className="min-h-screen bg-black flex flex-col items-center justify-center text-center space-y-12 px-6 py-20">
+
+      {/* ================== Header ================== */}
+      <h1 className="text-6xl md:text-7xl font-extrabold text-white-glow animate-pulse drop-shadow-[0_0_35px_#facc15]">
+        WELCOME TO THE GRIND
+      </h1>
+
+      {/* ================== Homepage Emblem ================== */}
+      <Image
+        src="/assets/logos/birdlogo3.png"
+        alt="PhoenixOps Homepage Emblem"
+        width={340}
+        height={340}
+        className="drop-shadow-[0_0_60px_#f97316] animate-pulse"
+      />
+
+      {/* ================== Tagline ================== */}
+      <p className="text-xl md:text-2xl italic text-gray-200 drop-shadow-[0_0_20px_#22c55e] max-w-2xl">
+        PhoenixOps is a living AI system. Explore above to learn more.
+      </p>
+    </main>
+  );
+}

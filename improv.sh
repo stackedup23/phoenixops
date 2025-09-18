@@ -2,13 +2,21 @@
 # improv.sh — PhoenixOps email/domain checks
 # Runs common ImprovMX API calls using $IMPROVMX_API_KEY from .env
 
-# List all domains
-curl -u "$IMPROVMX_API_KEY:" https://api.improvmx.com/v3/domains
+set -e  # exit on errors
 
-# Example: list aliases for our domain
-# curl -u "$IMPROVMX_API_KEY:" https://api.improvmx.com/v3/domains/stackingtechnologiesaollc.com/aliases
+# ========== PhoenixOps Mail Ops ==========
+echo "⚡ PhoenixOps ImprovMX — Domain Overview ⚡"
 
-# Example: create an alias (uncomment + adjust if needed)
+# List all domains linked to our API key
+curl -s -u "$IMPROVMX_API_KEY:" https://api.improvmx.com/v3/domains | jq .
+
+echo -e "\n=== PhoenixOps Mail Ops: Aliases for stackingtechnologiesaollc.com ==="
+# List aliases for our domain
+curl -s -u "$IMPROVMX_API_KEY:" \
+  https://api.improvmx.com/v3/domains/stackingtechnologiesaollc.com/aliases | jq .
+
+# === Example: Create alias (uncomment to use) ===
+# echo -e "\n=== PhoenixOps Mail Ops: Create Alias (support) ==="
 # curl -u "$IMPROVMX_API_KEY:" -X POST \
 #   -d "alias=support" \
 #   -d "forward=felixops23@proton.me" \
