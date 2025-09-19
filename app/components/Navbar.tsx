@@ -33,7 +33,17 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* === Desktop Links === */}
+                    {/* ================== Mobile Toggle ================== */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="focus:outline-none text-lime-400 drop-shadow-[0_0_12px_#22c55e]"
+            >
+              ☰
+            </button>
+          </div>
+
+          {/* ================== Desktop Links ================== */}
           <div className="hidden md:flex space-x-6">
             <Link href="/about" className="text-lime-400 drop-shadow-[0_0_12px_#22c55e] hover:scale-105 transition">About</Link>
             <Link href="/contact" className="text-cyan-400 drop-shadow-[0_0_12px_#06b6d4] hover:scale-105 transition">Contact</Link>
@@ -45,8 +55,19 @@ export default function Navbar() {
             <Link href="/store" className="text-green-400 drop-shadow-[0_0_12px_#22c55e] hover:scale-105 transition">Store</Link>
             <Link href="/bots" className="text-purple-400 drop-shadow-[0_0_12px_#a855f7] hover:scale-105 transition">Bots</Link>
           </div>
-        </div>
-      </div>
-    </nav>
-  );
-}
+
+          {/* ================== Mobile Menu ================== */}
+          {isOpen && (
+            <div className="md:hidden flex flex-col space-y-4 bg-black p-4 border-t border-orange-500 shadow-[0_0_20px_#f97316]">
+              <Link href="/about" className="text-lime-400 drop-shadow-[0_0_12px_#22c55e]">About</Link>
+              <Link href="/contact" className="text-cyan-400 drop-shadow-[0_0_12px_#06b6d4]">Contact</Link>
+              <Link href="/turning-point" className="text-pink-400 drop-shadow-[0_0_12px_#ec4899]">Turning Point</Link>
+              <Link href="/certifications" className="text-blue-400 drop-shadow-[0_0_12px_#3b82f6]">Certifications</Link>
+              <Link href="/revenue" className="text-orange-400 drop-shadow-[0_0_12px_#fb923c]">Revenue</Link>
+              <Link href="/policies" className="text-red-400 drop-shadow-[0_0_12px_#ef4444]">Policies</Link>
+              <Link href="/readme" className="text-white drop-shadow-[0_0_12px_#ffffff]">ReadMe</Link>
+              <Link href="/store" className="text-green-400 drop-shadow-[0_0_12px_#22c55e]">Store</Link>
+              <Link href="/bots" className="text-purple-400 drop-shadow-[0_0_12px_#a855f7]">Bots</Link>
+            </div>
+          )}
+
