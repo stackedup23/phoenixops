@@ -10,26 +10,27 @@ type Key = "mia" | "lyra" | "reaper" | "felix" | "lockdown" | "torch" | "bingo";
 export default function StorePage() {
   const [loadingKey, setLoadingKey] = useState<Key | null>(null);
 
-  // === STRIPE CHECKOUT HANDLER ========================================
+  // === STRIPE CHECKOUT HANDLER (Disabled in Demo Mode) ================
+  // NOTE: Leaving here for later reactivation. Right now we disable buttons
+  // and route everything to DemoBanner compliance mode.
+  /*
   const buy = async (bot: Key) => {
     try {
       setLoadingKey(bot);
-
-      // Send bot name only to backend API route
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ bot }),
       });
-
       const data = await res.json();
-      if (data?.url) window.location.href = data.url; // redirect to Stripe checkout
+      if (data?.url) window.location.href = data.url;
     } catch (e) {
       console.error("Checkout failed:", e);
     } finally {
       setLoadingKey(null);
     }
   };
+  */
 
   // === CARD COMPONENT =================================================
   const Card = ({
@@ -45,7 +46,7 @@ export default function StorePage() {
     img: string;
     keyId: Key;
   }) => (
-    <div className="card-stripe max-w-md mx-auto p-6 rounded-xl shadow-lg bg-black/50">
+    <div className="card-stripe max-w-md mx-auto p-6 rounded-xl shadow-lg bg-black/50 border border-yellow-500/40">
       {/* Bot Image */}
       <Image
         src={img}
@@ -63,13 +64,12 @@ export default function StorePage() {
       {/* Bot Description */}
       <p className="text-sm text-gray-300 mb-4">{blurb}</p>
 
-      {/* Subscribe Button */}
+      {/* Subscribe Button (Disabled in Demo Mode) */}
       <button
-        onClick={() => buy(keyId)}
-        disabled={loadingKey === keyId}
-        className="btn-stripe w-full disabled:opacity-60 disabled:cursor-not-allowed"
+        disabled
+        className="w-full px-6 py-3 rounded-lg font-semibold bg-gray-700 text-gray-400 cursor-not-allowed border border-gray-600"
       >
-        {loadingKey === keyId ? "Processing..." : "Subscribe — $10/mo"}
+        🔒 Payments Disabled — Demo Only
       </button>
 
       {/* Optional Tagline */}
@@ -77,10 +77,10 @@ export default function StorePage() {
         <p className="mt-3 italic text-purple-300 text-xs">{tagline}</p>
       )}
 
-      {/* Stripe Footer Note */}
-      <p className="text-xs text-gray-400 mt-3">
-        Secure payments powered by{" "}
-        <span className="text-purple-300 font-semibold">Stripe</span>.
+      {/* Compliance Footer Note */}
+      <p className="text-xs text-yellow-400 mt-3">
+        ⚠️ Payments disabled pending Stripe & legal clearance.<br />
+        PhoenixOps is EIN + D-U-N-S verified. Demo mode for funding review.
       </p>
     </div>
   );
