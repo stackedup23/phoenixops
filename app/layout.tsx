@@ -1,3 +1,4 @@
+import DemoBanner from "@/components/DemoBanner";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
@@ -48,11 +49,22 @@ export default function RootLayout({
               u.src='https://static.ads-twitter.com/uwt.js',
               a=t.getElementsByTagName(n)[0],
               a.parentNode.insertBefore(u,a))}(window,document,'script');
-              twq('config','qikbd'); // ⚡ replace 'qikbd' with your actual Twitter Pixel ID
+              twq('config','qikbd'); // ⚡ replace with your actual Pixel ID
             `,
           }}
         />
         {/* End Twitter Pixel */}
+
+        {/* === Twitter Conversion Event =============================== */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Track PhoenixOps demo conversion
+              twq('event','tw-qikbd-qikbe',{});
+            `,
+          }}
+        />
+        {/* End Twitter Conversion Event */}
       </head>
 
       <body className="bg-black min-h-screen text-center font-sans text-lg">
@@ -73,6 +85,9 @@ export default function RootLayout({
 
         {/* === Navigation Bar ========================================== */}
         <Navbar />
+
+        {/* === Demo Banner ============================================= */}
+        <DemoBanner />
 
         {/* === Main Content Wrapper ==================================== */}
         <main className="flex flex-col items-center justify-center w-full px-6">
