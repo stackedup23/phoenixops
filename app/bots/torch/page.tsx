@@ -1,55 +1,52 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
+/* ============================================================
+   # TORCH — Engagement & Retention
+   ============================================================ */
 export default function TorchPage() {
   return (
-    <main className="min-h-screen bg-black px-6 py-16 text-center space-y-12">
-
-      {/* === Hero Image === */}
-      <div className="flex justify-center mb-8">
-        <Image
-          src="/assets/bots/torch.png"
-          alt="Torch Bot"
-          width={220}
-          height={220}
-          className="drop-shadow-[0_0_35px_#f97316]"
-        />
+    <main className="min-h-screen bg-black px-6 py-10 text-center">
+      <div className="flex flex-col items-center space-y-4">
+        <Image src="/assets/bots/torch.png" alt="TORCH Bot" width={260} height={260} className="drop-shadow-[0_0_60px_#f97316] rounded-xl" />
+        <h1 className="text-6xl font-extrabold text-orange-400">TORCH</h1>
+        <p className="mt-2 text-2xl text-amber-300">Retention · Loyalty · Firekeeper</p>
       </div>
 
-      {/* === Title === */}
-      <h1 className="text-white text-5xl font-extrabold drop-shadow-[0_0_20px_#f97316] mb-8">
-        TORCH — Keep the Fire Alive
-      </h1>
-
-      {/* === Intro === */}
-      <section className="card border-orange-500 shadow-[0_0_25px_#f97316] space-y-4 max-w-3xl mx-auto">
-        <p className="text-gray-200 italic">
-          I am the flame you fuel. Support today, ignite tomorrow — I keep the squad lit.
+      <section className="mt-12 bg-black/70 border-2 border-orange-500 rounded-xl p-8 max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-amber-400 mb-4">Who I Am</h2>
+        <p className="text-amber-200 text-lg">
+          I am <strong>TORCH</strong> — keeper of the flame.
+          I spark engagement, nurture loyalty, and fuel the cycle of growth.
         </p>
-        <ul className="space-y-2 text-left">
-          <li className="text-gray-100 drop-shadow-[0_0_10px_#f97316]">⚡ Monthly support subscription</li>
-          <li className="text-gray-100 drop-shadow-[0_0_10px_#f97316]">⚡ Fuels upgrades & dev cycles</li>
-          <li className="text-gray-100 drop-shadow-[0_0_10px_#f97316]">⚡ Direct link to PhoenixOps fire</li>
-        </ul>
-        <button
-          onClick={() => window.location.href="/api/checkout?priceId="+process.env.TORCH_SUBSCRIPTION_ID}
-          className="btn-stripe mt-4"
-        >
-          Subscribe — $10/mo
-        </button>
       </section>
 
-      {/* === Footer Small Logo === */}
-      <footer className="mt-20">
-        <Image
-          src="/assets/logos/logo.png"
-          alt="PhoenixOps Logo Small"
-          width={120}
-          height={120}
-          className="mx-auto drop-shadow-[0_0_25px_#f97316]"
-        />
-      </footer>
+      <section className="mt-10 bg-black/70 border-2 border-yellow-400 rounded-xl p-8 max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-yellow-300 mb-4">Hustler’s Code</h2>
+        <ul className="text-amber-200 space-y-3 text-left text-lg">
+          <li>Every spark keeps the fire alive.</li>
+          <li>Support builds tomorrow’s loyalty.</li>
+          <li>Retention is cheaper than conquest.</li>
+          <li>Community is oxygen to fire.</li>
+        </ul>
+      </section>
+
+      <section className="mt-10 bg-black/70 border-2 border-yellow-500 rounded-xl p-8 max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-yellow-400 mb-4">Important to Know</h2>
+        <p className="text-gray-300 text-md">
+          I am not a payment processor. I provide <span className="text-orange-300">support flows and engagement structures</span>.
+          Stripe handles transactions; I handle community fire.
+        </p>
+      </section>
+
+      <section className="mt-10">
+        <p className="text-orange-300 italic">“I keep the squad lit.”</p>
+        <Link href="/bots/torch/dossier" className="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-400 text-black font-semibold rounded-lg shadow-[0_0_25px_#f97316] hover:scale-105 transition">
+          Access TORCH Dossier
+        </Link>
+      </section>
     </main>
   );
 }

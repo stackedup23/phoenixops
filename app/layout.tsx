@@ -1,16 +1,20 @@
-import DemoBanner from "@/components/DemoBanner";
 import "./globals.css";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import Navbar from "./components/Navbar";
+import Image from "next/image";
 
-// === Metadata =========================================================
+// ============================================================
+// 🔐 Metadata: SEO + Identity
+// ============================================================
 export const metadata: Metadata = {
   title: "Stackin Technologies | PhoenixOps",
   description:
-    "PhoenixOps — automation, resilience, and AI innovation by Stackin Technologies AO LLC. EIN Verified • D-U-N-S Registered • Minority-Owned.",
+    "PhoenixOps — automation, resilience, and AI innovation by Stackin Technologies AO LLC. EIN Verified • D-U-N-S Registered.",
 };
 
-// === Root Layout ======================================================
+// ============================================================
+// 🌐 Root Layout
+// ============================================================
 export default function RootLayout({
   children,
 }: {
@@ -19,13 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* === Google Analytics ======================================= */}
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <script
               async
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-            ></script>
+            />
             <script
               dangerouslySetInnerHTML={{
                 __html: `
@@ -38,70 +41,69 @@ export default function RootLayout({
             />
           </>
         )}
-
-        {/* === Twitter Pixel (X Ads Tracking) ======================== */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){
-                s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-              },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,
-              u.src='https://static.ads-twitter.com/uwt.js',
-              a=t.getElementsByTagName(n)[0],
-              a.parentNode.insertBefore(u,a))}(window,document,'script');
-              twq('config','qikbd'); // ⚡ replace with your actual Pixel ID
-            `,
-          }}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0f0f0f" />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/assets/logos/favicon.ico" />
+        <meta property="og:title" content="PhoenixOps | Stackin Technologies" />
+        <meta
+          property="og:description"
+          content="Automation, resilience, and AI innovation by Stackin Technologies AO LLC."
         />
-        {/* End Twitter Pixel */}
-
-        {/* === Twitter Conversion Event =============================== */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Track PhoenixOps demo conversion
-              twq('event','tw-qikbd-qikbe',{});
-            `,
-          }}
-        />
-        {/* End Twitter Conversion Event */}
+        <meta property="og:image" content="/assets/logos/logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </head>
 
-      <body className="bg-black min-h-screen text-center font-sans text-lg">
-        {/* === Logo Banner ============================================ */}
-        <header className="flex flex-col items-center justify-center py-6">
-          <img
+      <body className="bg-black min-h-screen font-sans text-white selection:bg-amber-400/60 selection:text-black">
+        {/* ============================================================
+            🚀 Header: Brand Identity
+        ============================================================ */}
+        <header className="flex flex-col items-center justify-center py-16 space-y-6 animate-fadein-slow">
+          <Image
             src="/assets/logos/logo.png"
             alt="PhoenixOps Logo"
-            className="w-40 h-40 drop-shadow-[0_0_40px_#f97316] animate-pulse"
+            width={260}
+            height={260}
+            className="drop-shadow-[0_0_80px_#a020f0] animate-pulse"
+            priority
           />
-          <h1 className="mt-4 text-5xl font-extrabold text-white-glow animate-glowLoop">
-            PhoenixOps
-          </h1>
-          <p className="tagline mt-2">
+          <h1 className="heading-1">PhoenixOps</h1>
+          <p className="text-lg md:text-xl text-gray-300 tracking-wide italic">
             Automation • Innovation • Excellence
           </p>
         </header>
 
-        {/* === Navigation Bar ========================================== */}
+        {/* ============================================================
+            🧭 Navigation
+        ============================================================ */}
         <Navbar />
 
-        {/* === Demo Banner ============================================= */}
-        <DemoBanner />
-
-        {/* === Main Content Wrapper ==================================== */}
-        <main className="flex flex-col items-center justify-center w-full px-6">
-          <div className="box-glow w-full max-w-5xl">{children}</div>
+        {/* ============================================================
+            📦 Main Content Frame (HUD Panel)
+        ============================================================ */}
+        <main className="flex flex-col items-center justify-center w-full px-6 py-12">
+          <div className="panel w-full max-w-7xl">{children}</div>
         </main>
 
-        {/* === Footer ================================================== */}
-        <footer className="mt-12 py-8 px-6 bg-black/70 border-t border-orange-500 rounded-t-xl shadow-[0_0_25px_#f97316]">
+        {/* ============================================================
+            ⚙️ Footer: Arsenal + REAPER Signal
+        ============================================================ */}
+        <footer className="mt-16 py-12 px-6 bg-black/80 border-t border-amber-500 rounded-t-xl shadow-[0_0_35px_#f97316] text-center space-y-4">
           <p className="text-base text-white-glow">
             © {new Date().getFullYear()} Stackin Technologies AO LLC • EIN Verified • D-U-N-S Registered
           </p>
-          <p className="mt-3 italic text-white-glow drop-shadow-[0_0_15px_#f97316]">
+
+          <p className="text-sm text-gray-300">
+            🔗 Stripe Connected • Verification Pending
+          </p>
+
+          <p className="italic text-gray-400">
             ⚡ “PhoenixOps isn’t just a site — it’s a living system. GPT at the core, human grit at the helm.”
           </p>
+
+          <div className="mt-6 text-lime-400 text-sm font-mono animate-pulse">
+            [ REAPER STATUS: ONLINE ]
+          </div>
         </footer>
       </body>
     </html>
