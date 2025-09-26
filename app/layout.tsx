@@ -7,7 +7,7 @@ import Image from "next/image";
 // 🔐 Metadata: SEO + Identity
 // ============================================================
 export const metadata: Metadata = {
-  title: "Stackin Technologies | PhoenixOps",
+  title: "Stackin Technologies AO LLC | PhoenixOps",
   description:
     "PhoenixOps — automation, resilience, and AI innovation by Stackin Technologies AO LLC. EIN Verified • D-U-N-S Registered.",
 };
@@ -23,6 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* ============================================================
+            📊 Analytics (Optional via Env Var)
+        ============================================================ */}
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <script
@@ -41,17 +44,33 @@ export default function RootLayout({
             />
           </>
         )}
+
+        {/* ============================================================
+            🧠 Meta / Branding
+        ============================================================ */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0f0f0f" />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/assets/logos/favicon.ico" />
-        <meta property="og:title" content="PhoenixOps | Stackin Technologies" />
+
+        {/* OpenGraph */}
+        <meta property="og:title" content="PhoenixOps | Stackin Technologies AO LLC" />
         <meta
           property="og:description"
           content="Automation, resilience, and AI innovation by Stackin Technologies AO LLC."
         />
         <meta property="og:image" content="/assets/logos/logo.png" />
+        <meta property="og:url" content="https://stackintechnologiesaollc.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="PhoenixOps | Stackin Technologies AO LLC" />
+        <meta
+          name="twitter:description"
+          content="Automation, resilience, and AI innovation by Stackin Technologies AO LLC."
+        />
+        <meta name="twitter:image" content="/assets/logos/logo.png" />
       </head>
 
       <body className="bg-black min-h-screen font-sans text-white selection:bg-amber-400/60 selection:text-black">

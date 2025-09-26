@@ -1,23 +1,34 @@
-"use client";
-
 import Image from "next/image";
 
 export default function DossierPage() {
   return (
     <main className="min-h-screen bg-black px-6 py-16 text-center space-y-16">
       {/* === Header === */}
-      <section>
-        <h1 className="text-5xl font-extrabold text-white drop-shadow-[0_0_30px_#f97316]">
+      <section className="space-y-4">
+        <h1 className="text-5xl font-extrabold text-amber-400 drop-shadow-[0_0_35px_#f97316]">
           PhoenixOps Dossier
         </h1>
-        <p className="mt-4 text-gray-400 text-lg italic max-w-3xl mx-auto">
-          Proof of resilience, adaptability, and global readiness. This is where
-          PhoenixOps stands apart from every “template” company.
+        <p className="text-gray-300 text-lg italic max-w-3xl mx-auto">
+          Proof of resilience, adaptability, and global readiness.
+          This is where PhoenixOps stands apart from every “template” company.
         </p>
       </section>
 
-      {/* === Business Legitimacy === */}
-      <section className="card border-green-500 shadow-[0_0_30px_#22c55e] max-w-4xl mx-auto text-left space-y-4">
+      {/* === Active Streams === */}
+      <section className="card border-orange-500 shadow-[0_0_30px_#f97316] max-w-4xl mx-auto text-left space-y-4 p-6 rounded-xl">
+        <h2 className="text-3xl font-bold text-amber-400 drop-shadow-[0_0_15px_#f97316]">
+          Active Streams
+        </h2>
+        <ul className="mt-4 space-y-2 text-lg text-gray-300">
+          <li>⚡ Automation pipelines</li>
+          <li>🔒 Security audits & REAPER integration</li>
+          <li>📊 Finance & compliance lanes</li>
+          <li>🌍 Minority-owned resilience strategies</li>
+        </ul>
+      </section>
+
+      {/* === Business Verification === */}
+      <section className="card border-green-500 shadow-[0_0_30px_#22c55e] max-w-4xl mx-auto text-left space-y-4 p-6 rounded-xl">
         <h2 className="text-3xl font-bold text-green-400 drop-shadow-[0_0_20px_#22c55e]">
           Business Verification
         </h2>
@@ -27,11 +38,15 @@ export default function DossierPage() {
           <li>✔️ D-U-N-S Verified</li>
           <li>✔️ EIN Confirmed</li>
           <li>✔️ Minority- and Women-Led Enterprise</li>
-          <li>✔️ AI-Supported Entity — our systems and bots are part of the team, not tools.</li>
+          <li>
+            ✔️ AI-Supported Entity — our systems and bots are part of the team,
+            not tools.
+          </li>
+        </ul>
       </section>
 
-      {/* === Global Currency Resilience === */}
-      <section className="card border-cyan-500 shadow-[0_0_30px_#22d3ee] max-w-4xl mx-auto text-left space-y-4">
+      {/* === Currency & Resilience === */}
+      <section className="card border-cyan-500 shadow-[0_0_30px_#22d3ee] max-w-4xl mx-auto text-left space-y-4 p-6 rounded-xl">
         <h2 className="text-3xl font-bold text-cyan-400 drop-shadow-[0_0_20px_#22d3ee]">
           Currency & Resilience Strategy
         </h2>
@@ -48,8 +63,8 @@ export default function DossierPage() {
         </ul>
       </section>
 
-      {/* === Overseas Readiness === */}
-      <section className="card border-yellow-500 shadow-[0_0_30px_#facc15] max-w-4xl mx-auto text-left space-y-4">
+      {/* === Global Mobility === */}
+      <section className="card border-yellow-500 shadow-[0_0_30px_#facc15] max-w-4xl mx-auto text-left space-y-4 p-6 rounded-xl">
         <h2 className="text-3xl font-bold text-yellow-400 drop-shadow-[0_0_20px_#facc15]">
           Global Mobility
         </h2>
