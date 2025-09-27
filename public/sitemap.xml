@@ -3,74 +3,74 @@
 
   <!-- Core Pages -->
   <url>
-    <loc>https://stackingtechnologiesaollc.com/</loc>
+    <loc>https://stackintechnologiesaollc.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/about</loc>
+    <loc>https://stackintechnologiesaollc.com/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/contact</loc>
+    <loc>https://stackintechnologiesaollc.com/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/certifications</loc>
+    <loc>https://stackintechnologiesaollc.com/certifications</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/policies</loc>
+    <loc>https://stackintechnologiesaollc.com/policies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/readme</loc>
+    <loc>https://stackintechnologiesaollc.com/readme</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Bots Hub -->
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots</loc>
+    <loc>https://stackintechnologiesaollc.com/bots</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots/felix</loc>
+    <loc>https://stackintechnologiesaollc.com/bots/felix</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots/lira</loc>
+    <loc>https://stackintechnologiesaollc.com/bots/lira</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots/mia</loc>
+    <loc>https://stackintechnologiesaollc.com/bots/mia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots/reaper</loc>
+    <loc>https://stackintechnologiesaollc.com/bots/reaper</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots/lockdown</loc>
+    <loc>https://stackintechnologiesaollc.com/bots/lockdown</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots/bingo</loc>
+    <loc>https://stackintechnologiesaollc.com/bots/bingo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stackingtechnologiesaollc.com/bots/torch</loc>
+    <loc>https://stackintechnologiesaollc.com/bots/torch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
