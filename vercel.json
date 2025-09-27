@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "name": "phoenixops",
-  "builds": [
-    { "src": "package.json", "use": "@vercel/next" }
-  ],
   "redirects": [
     {
-      "source": "/:path*",
-      "destination": "https://stackintechnologiesaollc.com/:path*",
+      "source": "/stackingtechnologiesaollc.com/(.*)",
+      "destination": "https://stackintechnologiesaollc.com/$1",
       "permanent": true
     }
   ],
