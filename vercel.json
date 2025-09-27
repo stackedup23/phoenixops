@@ -4,12 +4,9 @@
   "builds": [
     { "src": "package.json", "use": "@vercel/next" }
   ],
-  "rewrites": [
-    { "source": "/", "destination": "/" }
-  ],
   "redirects": [
     {
-      "source": "https://stackingtechnologiesaollc.com/:path*",
+      "source": "/:path*",
       "destination": "https://stackintechnologiesaollc.com/:path*",
       "permanent": true
     }
