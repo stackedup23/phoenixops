@@ -1,4 +1,26 @@
-User-agent: *
+# PhoenixOps robots.txt
+# Controlled crawler access
+
+# Allow trusted search engines
+User-agent: Googlebot
 Allow: /
 
-Sitemap: https://stackingtechnologiesaollc.com/sitemap.xml
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block known risky/spammy crawlers
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+# Block everything else by default
+User-agent: *
+Disallow: /
+
+# Sitemap for trusted bots
+Sitemap: https://stackintechnologiesaollc.com/sitemap.xml
